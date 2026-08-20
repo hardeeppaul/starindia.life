@@ -2,12 +2,17 @@
  * Star India - Product Catalog Data
  * 
  * Central data source for Star India product showcase.
- * To add new products in the future, simply append a new object to this array.
+ * Uses Vite asset bundling for robust mobile, desktop, and offline-safe image delivery.
  * 
  * Rules:
  * - Pure showcase only: no internal pricing, no e-commerce checkout.
  * - Safe & professional descriptions without unsubstantiated purity or health claims.
  */
+
+import gentsGoldRingImg from '../assets/products/gents-gold-ring.jpg';
+import ladiesGoldRingImg from '../assets/products/ladies-gold-ring.jpg';
+import mobileSolarChargerImg from '../assets/products/mobile-solar-charger.jpg';
+import ladiesPadImg from '../assets/products/ladies-pad.jpg';
 
 export const categories = [
   { id: "all", label: "All Products" },
@@ -23,7 +28,8 @@ export const products = [
     category: "Jewellery",
     categoryId: "jewellery",
     badge: "Featured Collection",
-    image: "/products/gents-gold-ring.jpg",
+    image: gentsGoldRingImg,
+    fallbackImage: "/products/gents-gold-ring.jpg",
     shortDescription: "Refined gold rings for men featuring contemporary and timeless styling with an enduring polished finish.",
     fullDescription: "Our Gents Gold Rings collection combines masculine elegance with master craftsmanship. Designed for men who value sophisticated simplicity, each ring features an exquisite finish suitable for everyday wear, formal gatherings, and celebratory milestones.",
     features: [
@@ -54,7 +60,8 @@ export const products = [
     category: "Jewellery",
     categoryId: "jewellery",
     badge: "Popular Design",
-    image: "/products/ladies-gold-ring.jpg",
+    image: ladiesGoldRingImg,
+    fallbackImage: "/products/ladies-gold-ring.jpg",
     shortDescription: "Graceful gold rings designed for women, blending traditional grace with chic modern aesthetics.",
     fullDescription: "Celebrate elegance with our Ladies Gold Rings collection. Featuring intricate artisanal patterns and graceful motifs, these rings offer a harmonious blend of traditional charm and modern design, making them an ideal accessory for festive occasions and daily elegance.",
     features: [
@@ -85,7 +92,8 @@ export const products = [
     category: "Technology",
     categoryId: "technology",
     badge: "Eco Innovation",
-    image: "/products/mobile-solar-charger.jpg",
+    image: mobileSolarChargerImg,
+    fallbackImage: "/products/mobile-solar-charger.jpg",
     shortDescription: "High-efficiency portable solar power bank engineered for outdoor adventures, travel, and on-the-go utility.",
     fullDescription: "Stay connected wherever life takes you with the Star India Mobile Solar Charger. Harnessing clean solar energy alongside standard rapid charging, this compact and rugged device provides reliable battery backup during travel, remote work, and outdoor excursions.",
     features: [
@@ -117,7 +125,8 @@ export const products = [
     category: "Personal Care",
     categoryId: "personal-care",
     badge: "Essential Care",
-    image: "/products/ladies-pad.jpg",
+    image: ladiesPadImg,
+    fallbackImage: "/products/ladies-pad.jpg",
     shortDescription: "Ultra-soft, breathable hygiene pads thoughtfully designed for reliable leakage protection and all-day comfort.",
     fullDescription: "Prioritize comfort and peace of mind with Star India Ladies Hygiene Pads. Engineered with ultra-soft cottony top layers and rapid-lock absorbent cores, they deliver gentle protection against leakage while keeping the skin dry, fresh, and irritation-free.",
     features: [

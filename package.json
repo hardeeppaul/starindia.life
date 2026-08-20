@@ -1,8 +1,8 @@
 {
-  "name": "starindia-life",
+  "name": "starindia",
   "version": "1.0.0",
   "private": true,
-  "description": "Star India - Official Product Showcase Platform (starindia.life)",
+  "description": "Star India - Official Product Showcase Platform (starindia.deepinfotech.site)",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -9,20 +9,21 @@ export default function ProductCard({ product }) {
       {/* Image Showcase Container */}
       <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
         <img
-          src={product.image}
+          src={product.image || product.fallbackImage}
           alt={`${product.name} - Star India Product Showcase`}
           loading="lazy"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          decoding="async"
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full"
           onError={(e) => {
-            // Fallback placeholder if image path fails
-            e.target.onerror = null;
-            e.target.src = 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&auto=format&fit=crop&q=80';
+            if (product.fallbackImage && e.target.src !== product.fallbackImage) {
+              e.target.src = product.fallbackImage;
+            }
           }}
         />
         
         {/* Category Pill */}
         <div className="absolute top-3 left-3">
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-900/80 backdrop-blur-md text-white border border-slate-700/50 shadow-sm">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-900/85 backdrop-blur-md text-white border border-slate-700/50 shadow-sm">
             <Tag className="w-3 h-3 text-amber-400" />
             {product.category}
           </span>

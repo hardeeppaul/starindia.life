@@ -90,12 +90,14 @@ export default function ProductDetails() {
           <div className="lg:col-span-6 space-y-4">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-inner group">
               <img
-                src={product.image}
+                src={product.image || product.fallbackImage}
                 alt={`${product.name} - Detailed Showcase`}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                decoding="async"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full"
                 onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&auto=format&fit=crop&q=80';
+                  if (product.fallbackImage && e.target.src !== product.fallbackImage) {
+                    e.target.src = product.fallbackImage;
+                  }
                 }}
               />
               
@@ -248,9 +250,16 @@ export default function ProductDetails() {
               {relatedProducts.map((relProduct) => (
                 <div key={relProduct.id} className="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 hover:shadow-md transition-shadow">
                   <img
-                    src={relProduct.image}
+                    src={relProduct.image || relProduct.fallbackImage}
                     alt={relProduct.name}
-                    className="w-16 h-16 rounded-xl object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-16 h-16 rounded-xl object-cover shrink-0"
+                    onError={(e) => {
+                      if (relProduct.fallbackImage && e.target.src !== relProduct.fallbackImage) {
+                        e.target.src = relProduct.fallbackImage;
+                      }
+                    }}
                   />
                   <div className="flex-grow">
                     <h4 className="text-sm font-bold text-slate-900 font-['Outfit']">{relProduct.name}</h4>

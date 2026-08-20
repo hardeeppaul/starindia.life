@@ -1,19 +1,19 @@
 /**
  * Star India - Company Information Configuration
  * Central source of truth for contact details, domain, branding, and social links.
- * Easily update contact details here without modifying UI components.
+ * Production Domain: https://starindia.deepinfotech.site
  */
 
 export const companyInfo = {
   name: "Star India",
   tagline: "Quality Products. Trusted Choice.",
   subheading: "Offering a curated and diverse selection of quality lifestyle jewellery, innovative tech utilities, and essential personal care products tailored for modern living.",
-  website: "https://starindia.life",
-  domain: "starindia.life",
+  website: "https://starindia.deepinfotech.site",
+  domain: "starindia.deepinfotech.site",
   
   // Contact Information (Easily editable)
-  email: "contact@starindia.life",
-  supportEmail: "support@starindia.life",
+  email: "contact@starindia.deepinfotech.site",
+  supportEmail: "support@starindia.deepinfotech.site",
   phone: "+91 98765 43210",
   altPhone: "+91 98765 43211",
   whatsapp: "+91 98765 43210",

@@ -6,12 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    proxy: {
-      '/dashboard': {
-        target: 'https://starindia.life',
-        changeOrigin: true,
-        secure: false,
-      }
-    }
+    port: 5173,
+    host: true
+  },
+  build: {
+    sourcemap: false,
+    cssMinify: true
   }
 })

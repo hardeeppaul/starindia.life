@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /dashboard/
 
-Sitemap: https://starindia.life/sitemap.xml
+Sitemap: https://starindia.deepinfotech.site/sitemap.xml

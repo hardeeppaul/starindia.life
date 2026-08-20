@@ -40,7 +40,7 @@ export default function Navbar() {
               <span className="text-2xl font-bold tracking-tight text-white flex items-center gap-1.5 font-['Outfit']">
                 Star India
                 <span className="inline-block w-2 h-2 rounded-full bg-amber-400"></span>
-              </span>
+              
               
               </span>
             </div>

@@ -6,14 +6,13 @@ export default function ProductCard({ product }) {
   return (
     <div className="group bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-300/60 transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
       
-      {/* Image Showcase Container */}
-      <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+      {/* Image Showcase Container with robust mobile dimensions */}
+      <div className="product-image-box relative w-full h-[220px] sm:h-[250px] bg-slate-100 overflow-hidden">
         <img
           src={product.image || product.fallbackImage}
           alt={`${product.name} - Star India Product Showcase`}
-          loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full"
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full block"
           onError={(e) => {
             if (product.fallbackImage && e.target.src !== product.fallbackImage) {
               e.target.src = product.fallbackImage;
@@ -22,7 +21,7 @@ export default function ProductCard({ product }) {
         />
         
         {/* Category Pill */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 z-10">
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-900/85 backdrop-blur-md text-white border border-slate-700/50 shadow-sm">
             <Tag className="w-3 h-3 text-amber-400" />
             {product.category}
@@ -31,7 +30,7 @@ export default function ProductCard({ product }) {
 
         {/* Badge */}
         {product.badge && (
-          <div className="absolute top-3 right-3">
+          <div className="absolute top-3 right-3 z-10">
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-400 text-slate-950 shadow-md">
               <Sparkles className="w-3 h-3" />
               {product.badge}

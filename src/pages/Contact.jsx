@@ -328,7 +328,7 @@ export default function Contact() {
               </p>
 
               {/* Styled Mock Map / Office visual */}
-              <div className="mt-4 aspect-video rounded-xl bg-slate-900 border border-slate-800 overflow-hidden relative flex items-center justify-center p-4 text-center">
+              <div className="mt-4 aspect-video min-h-[160px] rounded-xl bg-slate-900 border border-slate-800 overflow-hidden relative flex items-center justify-center p-4 text-center">
                 <div className="space-y-2">
                   <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center mx-auto">
                     <MapPin className="w-5 h-5" />

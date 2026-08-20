@@ -88,12 +88,12 @@ export default function ProductDetails() {
           
           {/* Left Column: High-Res Image Display */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-inner group">
+            <div className="relative w-full min-h-[260px] h-[280px] sm:h-[380px] md:h-[420px] aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-inner group">
               <img
                 src={product.image || product.fallbackImage}
                 alt={`${product.name} - Detailed Showcase`}
                 decoding="async"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full"
+                className="w-full h-full min-h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full block"
                 onError={(e) => {
                   if (product.fallbackImage && e.target.src !== product.fallbackImage) {
                     e.target.src = product.fallbackImage;

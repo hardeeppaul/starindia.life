@@ -1,9 +1,22 @@
 /**
- * Star India - API Endpoints Gateway
- * Re-exports authentication and general API configurations
+ * Star India - API Configuration
+ * 
+ * Simply add your API URLs here.
+ * When you are ready to connect any form, paste your endpoint inside the quotes.
  */
 
-import { AUTH_API, API_BASE_URL } from './authApi';
+export const API = {
+  // Authentication APIs
+  login: "",
+  signup: "",
+  forgotPassword: "",
+  changePassword: "",
 
-export { AUTH_API, API_BASE_URL };
-export default AUTH_API;
+  // Form APIs
+  contact: "",
+
+  // Data APIs
+  getProducts: "",
+};
+
+export default API;

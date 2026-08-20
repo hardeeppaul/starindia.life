@@ -12,8 +12,11 @@
  * - Request Encoding: application/x-www-form-urlencoded / FormData
  */
 
-// Base domain for Star India
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://starindia.life';
+// In development, empty string uses Vite's proxy configured in vite.config.js to bypass CORS
+// In production, uses configured VITE_API_BASE_URL or canonical production domain
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL !== undefined
+  ? import.meta.env.VITE_API_BASE_URL
+  : (import.meta.env.DEV ? '' : 'https://starindia.life');
 
 export const AUTH_API = {
   // Existing Star India Login API
@@ -35,10 +38,10 @@ export const AUTH_API = {
   VERIFY_SPONSOR: `${API_BASE_URL}/dashboard/ajax_sponsor.php`,
 
   // Existing Star India Forgot Password URL
-  FORGOT_PASSWORD: `${API_BASE_URL}/dashboard/forgot-password.php`,
+  FORGOT_PASSWORD: `https://starindia.life/dashboard/forgot-password.php`,
 
   // Existing Star India Member Dashboard Home
-  DASHBOARD_HOME: `${API_BASE_URL}/dashboard/`
+  DASHBOARD_HOME: `https://starindia.life/dashboard/`
 };
 
 export default AUTH_API;

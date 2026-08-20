@@ -41,8 +41,7 @@ export default function Navbar() {
                 Star India
                 <span className="inline-block w-2 h-2 rounded-full bg-amber-400"></span>
               </span>
-              <span className="block text-[11px] font-medium tracking-wider text-amber-300/80 uppercase">
-                {companyInfo.domain}
+              
               </span>
             </div>
           </Link>
